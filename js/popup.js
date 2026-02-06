@@ -1024,7 +1024,7 @@ async function displayThemeListNew(direction) {
             console.log(e);
             current_page_num = 1;
             fallback = true;
-            displayAlert(true, "There was a problem getting themes from the Better Canvas server, so the old themes browser is being displayed for now.");
+            displayAlert(true, "There was a problem getting themes from the server, so the old themes browser is being displayed for now.");
             displayThemeListOld(0);
             return;
         }
