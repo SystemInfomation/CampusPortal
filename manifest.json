@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Better Canvas",
-  "description": "Feature packed extension for Canvas.",
+  "name": "BetterInfiniteCampus",
+  "description": "Personal fork - Adds dark theme, grade tools, and interface tweaks to Forsyth IC portal (adapted from BetterCanvas)",
   "version": "5.12.6",
   "icons": {
     "16": "icon/icon-16.png",
@@ -15,7 +15,7 @@
       "38": "icon/icon-38.png"
     },
     "default_popup": "html/popup.html",
-    "default_title": "Better Canvas"
+    "default_title": "BetterInfiniteCampus"
   },
   "background": {
     "service_worker": "js/background.js"
@@ -23,12 +23,13 @@
   "options_page": "html/options.html",
   "content_scripts": [
     {
-      "matches": ["https://*/*"],
+      "matches": ["*://campus.forsyth.k12.ga.us/*", "*://*.infinitecampus.org/*"],
       "js": ["js/content.js"],
       "css": ["css/content.css"],
       "run_at": "document_start"
     }
   ],
+  "host_permissions": ["*://campus.forsyth.k12.ga.us/*", "*://*.infinitecampus.org/*"],
   "permissions": ["storage"],
   "default_locale": "en"
 }
