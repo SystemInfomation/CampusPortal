@@ -1,5 +1,17 @@
 ![Better Canvas](/icon/icon-wide.png)
 
+# BetterInfiniteCampus
+
+**Personal adaptation of BetterCanvas for Infinite Campus student portal**
+
+This is a personal fork of [BetterCanvas](https://github.com/ksucpea/bettercanvas) by ksucpea, adapted for use with Infinite Campus (specifically Forsyth County GA portal). This version is for personal use only and is not intended for public distribution.
+
+Original BetterCanvas features adapted for Infinite Campus include dark mode, GPA calculator, and UI enhancements.
+
+---
+
+## Original BetterCanvas README
+
 # Better Canvas
 
 Enhancements to Canvas like dark mode, better todo list, GPA calculator, and more!
