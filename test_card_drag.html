@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Drag & Drop - BetterInfiniteCampus Demo</title>
+    <link rel="stylesheet" href="css/content.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .demo-header {
+            background: linear-gradient(140deg, #1a1a22 0%, #22222e 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(58, 195, 235, 0.3);
+        }
+        .demo-header h1 {
+            color: #5bc5eb;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 12px rgba(58, 195, 235, 0.5);
+        }
+        .demo-header p {
+            color: #e8e8ea;
+            margin: 0;
+        }
+        .controls {
+            background: linear-gradient(145deg, #1a1a22, #1e1e26);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1.5px solid rgba(58, 195, 235, 0.3);
+        }
+        .controls button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .demo-card {
+            min-height: 150px;
+        }
+        .instructions {
+            background: rgba(58, 195, 235, 0.1);
+            border: 2px solid rgba(58, 195, 235, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .instructions h3 {
+            color: #5bc5eb;
+            margin-top: 0;
+        }
+        .instructions ul {
+            color: #e8e8ea;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-header">
+        <h1>🎯 Card Drag & Drop System</h1>
+        <p>Rearrange cards by dragging the grip handle (⋮⋮) in the top-right corner</p>
+    </div>
+
+    <div class="controls">
+        <button class="button" onclick="resetLayout()">🔄 Reset Layout</button>
+        <button class="button" onclick="saveLayoutManually()">💾 Save Current Layout</button>
+        <button class="button button--small" onclick="showPositions()">📍 Show Positions</button>
+    </div>
+
+    <h2 style="color: #5bc5eb; margin-bottom: 20px;">Draggable Cards</h2>
+    
+    <div class="card-container" id="main-container">
+        <div class="card demo-card">
+            <h3 style="color: #5bc5eb; margin-bottom: 10px;">📊 GPA Overview</h3>
+            <p style="font-size: 36px; font-weight: bold; margin: 20px 0; color: #85d88f;">3.85</p>
+            <div class="badge">Weighted</div>
+        </div>
+
+        <div class="panel demo-card">
+            <h3 style="color: #5bc5eb; margin-bottom: 10px;">📝 Assignments Due</h3>
+            <p style="margin: 10px 0;">• Math Homework - Tomorrow</p>
+            <p style="margin: 10px 0;">• Science Lab - Friday</p>
+            <p style="margin: 10px 0;">• Essay Draft - Next Week</p>
+        </div>
+
+        <div class="grid-item demo-card">
+            <h3>📚 Course Count</h3>
+            <p>7</p>
+            <span style="font-size: 14px; opacity: 0.8;">Active Courses</span>
+        </div>
+
+        <div class="card demo-card">
+            <h3 style="color: #5bc5eb; margin-bottom: 10px;">🎯 Attendance</h3>
+            <p style="font-size: 32px; font-weight: bold; margin: 20px 0; color: #85d88f;">98%</p>
+            <div class="status-indicator">Excellent</div>
+        </div>
+
+        <div class="panel demo-card">
+            <h3 style="color: #5bc5eb; margin-bottom: 10px;">⭐ Recent Grades</h3>
+            <p style="margin: 10px 0;">Math 101: <span style="color: #85d88f;">A (95%)</span></p>
+            <p style="margin: 10px 0;">English: <span style="color: #85d88f;">A- (92%)</span></p>
+            <p style="margin: 10px 0;">Science: <span style="color: #85d88f;">B+ (88%)</span></p>
+        </div>
+
+        <div class="grid-item demo-card">
+            <h3>📅 Days Left</h3>
+            <p>42</p>
+            <span style="font-size: 14px; opacity: 0.8;">Until Semester End</span>
+        </div>
+
+        <div class="card demo-card">
+            <h3 style="color: #5bc5eb; margin-bottom: 10px;">🏆 Achievements</h3>
+            <div class="badge" style="margin: 5px;">Honor Roll</div>
+            <div class="badge" style="margin: 5px;">Perfect Attendance</div>
+            <div class="badge" style="margin: 5px;">Dean's List</div>
+        </div>
+
+        <div class="panel demo-card">
+            <h3 style="color: #5bc5eb; margin-bottom: 10px;">🔔 Notifications</h3>
+            <div class="notification" style="margin: 10px 0; padding: 10px;">
+                <div class="notification__text">Grade posted in Math</div>
+                <div class="notification__date">2 hours ago</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>How to Use Card Rearrangement</h3>
+        <ul>
+            <li><strong>Hover over any card</strong> - The grip handle (⋮⋮) appears in top-right corner</li>
+            <li><strong>Click and drag the grip</strong> - Card becomes semi-transparent and follows cursor</li>
+            <li><strong>Drop near another card</strong> - Cards swap positions with smooth animation</li>
+            <li><strong>Automatic save</strong> - Your layout is saved automatically to browser storage</li>
+            <li><strong>Reset button</strong> - Returns all cards to default positions</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">Features</h3>
+        <ul>
+            <li>✨ <strong>Visual feedback</strong> - Ghost element shows where card will go</li>
+            <li>🎯 <strong>Drop target highlighting</strong> - Nearby cards glow when you can swap</li>
+            <li>💾 <strong>Persistent storage</strong> - Layout saved across page reloads</li>
+            <li>🔄 <strong>Smooth animations</strong> - Cards swap with beautiful transitions</li>
+            <li>📱 <strong>Works everywhere</strong> - All IC cards, buttons, panels, and grid items</li>
+        </ul>
+
+        <h3 style="margin-top: 20px;">Supported Elements</h3>
+        <ul>
+            <li>Cards (.card, .panel, .ic-DashboardCard)</li>
+            <li>Grid items (.grid-item)</li>
+            <li>App buttons (.app-button)</li>
+            <li>BetterCanvas GPA cards (.bettercanvas-gpa-card)</li>
+            <li>Notifications (.notification)</li>
+        </ul>
+    </div>
+
+    <script src="js/modules/card-mover.js"></script>
+    <script>
+        function resetLayout() {
+            if (confirm('Reset all cards to default positions?')) {
+                CardMover.resetLayout();
+            }
+        }
+
+        function saveLayoutManually() {
+            CardMover.saveCurrentLayout();
+            alert('Layout saved! Your card positions will persist across page reloads.');
+        }
+
+        function showPositions() {
+            const moveable = document.querySelectorAll('[data-moveable="true"]');
+            let info = 'Current Card Positions:\n\n';
+            
+            moveable.forEach((elem, idx) => {
+                const id = elem.getAttribute('data-card-id');
+                const parent = elem.parentNode;
+                const siblings = Array.from(parent.children).filter(
+                    child => child.hasAttribute('data-moveable')
+                );
+                const position = siblings.indexOf(elem);
+                info += `${idx + 1}. ${id} - Position ${position}\n`;
+            });
+            
+            alert(info);
+        }
+
+        // Initialize after page load
+        window.addEventListener('load', () => {
+            console.log('Demo page loaded - CardMover should be active');
+        });
+    </script>
+</body>
+</html>

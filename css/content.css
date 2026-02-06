@@ -1,77 +1,352 @@
-/* BetterInfiniteCampus - Personal adaptation for Infinite Campus portal 
- * Original: BetterCanvas by ksucpea (https://github.com/ksucpea/bettercanvas)
- * Adapted for: Forsyth County GA Infinite Campus portal
- * This is a personal fork - not for redistribution
+/* BetterInfiniteCampus - Custom Glow Theme
+ * Personal IC Portal Enhancement
  */
 
-/* Infinite Campus Dark Mode Overrides */
 body {
-  background-color: #161616 !important;
-  color: #f5f5f5 !important;
+  background-color: #0d0d0f !important;
+  background-image: 
+    radial-gradient(ellipse at 15% 30%, rgba(58, 195, 235, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 75%, rgba(130, 205, 130, 0.06) 0%, transparent 48%),
+    radial-gradient(circle at 50% 10%, rgba(100, 180, 220, 0.03) 0%, transparent 35%);
+  color: #f7f7f7 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
 }
 
+/* Cards with Custom Neon Outline */
 table, .grid, .section {
-  background-color: #1e1e1e !important;
-  color: #e2e2e2 !important;
+  background-color: #181820 !important;
+  background-image: linear-gradient(145deg, rgba(24,24,32,0.95) 0%, rgba(20,20,28,0.98) 100%) !important;
+  color: #e8e8ea !important;
+  border-radius: 14px !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.25) !important;
+  box-shadow: 
+    0 3px 18px rgba(5, 5, 10, 0.6),
+    0 0 35px rgba(58, 195, 235, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03) !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
+table:hover, .section:hover {
+  border-color: rgba(58, 195, 235, 0.55) !important;
+  box-shadow: 
+    0 7px 28px rgba(5, 5, 10, 0.75),
+    0 0 55px rgba(58, 195, 235, 0.28),
+    0 0 85px rgba(58, 195, 235, 0.15),
+    inset 0 0 18px rgba(58, 195, 235, 0.08) !important;
+  transform: translateY(-3px) scale(1.005) !important;
+}
+
+/* Pulsing Edge Effect */
+@keyframes neonPulse {
+  0%, 100% { 
+    border-color: rgba(58, 195, 235, 0.32);
+    box-shadow: 0 0 35px rgba(58, 195, 235, 0.15);
+  }
+  45% { 
+    border-color: rgba(130, 205, 130, 0.48);
+    box-shadow: 0 0 45px rgba(130, 205, 130, 0.22);
+  }
+}
+
+table.glow-active, .section.glow-active {
+  animation: neonPulse 3.5s ease-in-out infinite;
+}
+
+/* Enhanced Table Rows */
 table tr:nth-child(even) {
-  background-color: #262626 !important;
+  background-color: #1e1e1e !important;
+}
+
+table tr {
+  transition: all 0.2s ease !important;
 }
 
 table tr:hover {
-  background-color: #2a2a2a !important;
+  background-color: rgba(58, 195, 235, 0.12) !important;
+  background-image: linear-gradient(90deg, transparent, rgba(58, 195, 235, 0.08), transparent) !important;
+  box-shadow: 
+    inset 3px 0 0 rgba(58, 195, 235, 0.4),
+    0 0 22px rgba(58, 195, 235, 0.18) !important;
 }
 
+/* Enhanced Headers with Glow Text */
 table th {
-  background-color: #1e1e1e !important;
-  color: #f5f5f5 !important;
-  border-bottom: 2px solid #3c3c3c !important;
+  background: linear-gradient(140deg, #1c1c24 0%, #232330 100%) !important;
+  color: #5bc5eb !important;
+  border-bottom: 2.5px solid rgba(58, 195, 235, 0.45) !important;
+  text-shadow: 
+    0 0 12px rgba(58, 195, 235, 0.55),
+    0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  padding: 15px !important;
 }
 
 table td {
-  border-color: #3c3c3c !important;
+  border-color: rgba(60, 60, 60, 0.5) !important;
   color: #e2e2e2 !important;
+  padding: 12px !important;
 }
 
+/* Links with Shimmer */
 a {
-  color: #56Caf0 !important;
+  color: #5bc5eb !important;
+  text-decoration: none !important;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+}
+
+a::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 1.5px !important;
+  background: linear-gradient(90deg, transparent, #5bc5eb, transparent) !important;
+  transition: width 0.35s ease !important;
+}
+
+a:hover {
+  color: #85d88f !important;
+  text-shadow: 
+    0 0 9px rgba(91, 197, 235, 0.65),
+    0 0 16px rgba(133, 216, 143, 0.35) !important;
+}
+
+a:hover::after {
+  width: 100% !important;
 }
 
 a:visited {
   color: #8ba3e0 !important;
 }
 
+/* Input Fields with Inner Glow */
 input[type="text"], input[type="password"], textarea, select {
-  background-color: #262626 !important;
-  color: #f5f5f5 !important;
-  border-color: #3c3c3c !important;
+  background-color: #16161e !important;
+  background-image: linear-gradient(165deg, rgba(22,22,30,0.9), rgba(18,18,26,1)) !important;
+  color: #f7f7f7 !important;
+  border: 1.8px solid rgba(58, 195, 235, 0.28) !important;
+  border-radius: 9px !important;
+  padding: 11px 13px !important;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+textarea:focus, 
+select:focus {
+  outline: none !important;
+  border-color: rgba(58, 195, 235, 0.75) !important;
+  box-shadow: 
+    0 0 22px rgba(58, 195, 235, 0.38),
+    0 4px 12px rgba(5, 5, 10, 0.4),
+    inset 0 0 12px rgba(58, 195, 235, 0.12),
+    inset 0 2px 4px rgba(255, 255, 255, 0.05) !important;
+  background-color: #1a1a24 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Portal Navigation with Neon Accent */
 .portal, .header, .menu, nav {
-  background-color: #1e1e1e !important;
-  color: #f5f5f5 !important;
+  background: linear-gradient(142deg, #1a1a22 0%, #22222e 100%) !important;
+  color: #f7f7f7 !important;
+  border-bottom: 2.2px solid rgba(58, 195, 235, 0.35) !important;
+  box-shadow: 
+    0 5px 22px rgba(5, 5, 10, 0.55),
+    0 0 32px rgba(58, 195, 235, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  border-radius: 10px !important;
+  margin-bottom: 22px !important;
+  padding: 17px !important;
 }
 
-/* Keep original BetterCanvas classes below */
+/* Shimmer Animation for Special Elements */
+@keyframes shimmerEffect {
+  0%, 100% { opacity: 0.95; }
+  48% { opacity: 0.78; }
+}
+
+.important, .grade-a {
+  animation: shimmerEffect 2.3s ease-in-out infinite;
+}
+
+/* Interactive Buttons with Radiant Glow */
+button, .btn, input[type="submit"] {
+  background: linear-gradient(138deg, rgba(58, 195, 235, 0.18), rgba(130, 205, 130, 0.15)) !important;
+  border: 2px solid rgba(58, 195, 235, 0.38) !important;
+  color: #f7f7f7 !important;
+  border-radius: 10px !important;
+  padding: 11px 22px !important;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  font-weight: 550 !important;
+  box-shadow: 
+    0 3px 12px rgba(5, 5, 10, 0.4),
+    0 0 18px rgba(58, 195, 235, 0.12) !important;
+}
+
+button:hover, .btn:hover, input[type="submit"]:hover {
+  background: linear-gradient(138deg, rgba(58, 195, 235, 0.32), rgba(130, 205, 130, 0.28)) !important;
+  border-color: rgba(58, 195, 235, 0.72) !important;
+  box-shadow: 
+    0 5px 18px rgba(5, 5, 10, 0.6),
+    0 0 28px rgba(58, 195, 235, 0.42),
+    0 0 48px rgba(58, 195, 235, 0.22),
+    inset 0 0 12px rgba(58, 195, 235, 0.08) !important;
+  transform: translateY(-2.5px) scale(1.02) !important;
+}
+
+/* Grid Items with Luminous Effect */
+.grid-item {
+  background: linear-gradient(143deg, #1a1a22, #22222e) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.3) !important;
+  border-radius: 13px !important;
+  padding: 22px !important;
+  box-shadow: 
+    0 4px 17px rgba(5, 5, 10, 0.52),
+    0 0 32px rgba(58, 195, 235, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03) !important;
+  transition: all 0.34s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.grid-item:hover {
+  border-color: rgba(130, 205, 130, 0.58) !important;
+  box-shadow: 
+    0 8px 26px rgba(5, 5, 10, 0.72),
+    0 0 48px rgba(130, 205, 130, 0.32),
+    0 0 75px rgba(130, 205, 130, 0.18),
+    inset 0 0 16px rgba(130, 205, 130, 0.09) !important;
+  transform: scale(1.025) translateY(-2px) !important;
+}
+
+.grid-item h3 {
+  color: #5bc5eb !important;
+  text-shadow: 
+    0 0 11px rgba(91, 197, 235, 0.52),
+    0 2px 4px rgba(0, 0, 0, 0.25) !important;
+  letter-spacing: 0.4px !important;
+}
+
+.grid-item p {
+  color: #e8e8ea !important;
+  font-size: 29px !important;
+  font-weight: 720 !important;
+  text-shadow: 
+    0 0 16px rgba(133, 216, 143, 0.42),
+    0 3px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Custom Scrollbar with Gradient Track */
+::-webkit-scrollbar {
+  width: 13px;
+  background-color: #0d0d0f;
+}
+
+::-webkit-scrollbar-track {
+  background: #16161e;
+  border-radius: 7px;
+  border: 1px solid rgba(58, 195, 235, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(165deg, rgba(58, 195, 235, 0.65), rgba(130, 205, 130, 0.62));
+  border-radius: 7px;
+  border: 2.5px solid #16161e;
+  box-shadow: 0 0 10px rgba(58, 195, 235, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(165deg, rgba(58, 195, 235, 0.88), rgba(130, 205, 130, 0.85));
+  box-shadow: 
+    0 0 14px rgba(58, 195, 235, 0.5),
+    0 0 24px rgba(130, 205, 130, 0.3);
+}
+
+/* Original BetterCanvas Enhanced Classes */
 .extension-gpa{font-size:1.8em;font-weight:700;padding-top:8px;border-style:none!important;}
 .extension-weight_select{display:inline-block;margin:0;}
 .hypodivcalc span {font-weight: bold}
-.hypodivcalc{display: flex;min-width:calc(33.33% - 50px);box-shadow: #9da5ab80 0px 2px 5px;align-items:center;background-color:#eee;border-radius:7px;margin:10px 5px 0;padding:20px;width:calc(33.33% - 50px);}
+.hypodivcalc{
+  display: flex;
+  min-width:calc(33.33% - 50px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 30px rgba(86, 202, 240, 0.2)!important;
+  align-items:center;
+  background: linear-gradient(135deg, #1a1a1a, #252525)!important;
+  border-radius:12px!important;
+  border: 1px solid rgba(86, 202, 240, 0.3)!important;
+  margin:10px 5px 0;
+  padding:20px;
+  width:calc(33.33% - 50px);
+  transition: all 0.3s ease!important;
+}
+.hypodivcalc:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7), 0 0 50px rgba(86, 202, 240, 0.4)!important;
+  border-color: rgba(86, 202, 240, 0.6)!important;
+  transform: translateY(-3px)!important;
+}
 #grade-summary-content ~ .extension-calcgpa{font-size:1.2em;font-weight:700;}
 .hypocalcform span{font-weight:700;min-width:50%;}
 .ic-DashboardCard__header_hero {border:0!important}
 .bettercanvas-completed{text-decoration:line-through;}
 .bettercanvas-completed a{text-decoration:line-through;}
 .extension-embed-hidden {display: none!important}
-.extension-linkpreview {background-color:#eee;border:none;border-radius:7px;padding:5px 15px;color:#6C757C;font-weight:bold;box-shadow: #9da5ab80 0px 2px 5px;margin: 5px 2px}
-.extension-linkpreview:hover {background-color:#e6e6e6;}
+.extension-linkpreview {
+  background: linear-gradient(135deg, #1a1a1a, #252525)!important;
+  border: 1px solid rgba(86, 202, 240, 0.3)!important;
+  border-radius:10px!important;
+  padding:8px 16px!important;
+  color:#56Caf0!important;
+  font-weight:600!important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 20px rgba(86, 202, 240, 0.15)!important;
+  margin: 5px 2px!important;
+  transition: all 0.3s ease!important;
+}
+.extension-linkpreview:hover {
+  background: linear-gradient(135deg, #252525, #303030)!important;
+  border-color: rgba(86, 202, 240, 0.7)!important;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.7), 0 0 40px rgba(86, 202, 240, 0.4)!important;
+  transform: translateY(-2px) scale(1.05)!important;
+}
 .extension-linkpreview:focus {outline: none}
 .hypocalcform-collector {display: flex;flex-wrap:wrap;}
 .extension-aldue ~ .extension-al{font-size: 40px;background-color: red;}
 .gpachanger-percentage {margin: 0 8px 0 4px;font-size:1.2em;font-weight: bold}
-.extension-update {box-shadow: 0 2px 5px rgb(0 0 0 / 30%);opacity: .9;border-radius: 3px;color: #000;padding: 20px;z-index:100;position: absolute;width: 360px; height: 192px; background-color: #fff;top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
-.extension-updateclose {position:absolute;top:5px;right:5px;border:none;background:none;color: #000!important;font-size: 32px;padding: 5px;}
+.extension-update {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 50px rgba(86, 202, 240, 0.3)!important;
+  opacity: .95!important;
+  border-radius: 12px!important;
+  border: 2px solid rgba(86, 202, 240, 0.4)!important;
+  color: #f5f5f5!important;
+  background: linear-gradient(135deg, #1a1a1a, #252525)!important;
+  padding: 24px!important;
+  z-index:100;
+  position: absolute;
+  width: 380px;
+  height: 210px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.extension-updateclose {
+  position:absolute;
+  top:5px;
+  right:5px;
+  border:none;
+  background: rgba(86, 202, 240, 0.2)!important;
+  color: #56Caf0!important;
+  font-size: 32px;
+  padding: 5px;
+  border-radius: 8px!important;
+  transition: all 0.3s ease!important;
+}
+.extension-updateclose:hover {
+  background: rgba(86, 202, 240, 0.4)!important;
+  box-shadow: 0 0 20px rgba(86, 202, 240, 0.5)!important;
+}
 .extension-skeleton {height:36px;display:flex;align-items:center;margin-bottom:5px;}
 .extension-skeleton-text {margin-left: 18px;background: #ededed;width: 160px;height: 16px;animation: blink .5s infinite;}
 .extension-gpaOptions {display:flex;align-items:center;margin:21px 0;}
@@ -218,4 +493,373 @@ input[type="text"], input[type="password"], textarea, select {
     50% {
         opacity: .5;
     }
+}
+
+/* ========================================
+   Modern Infinite Campus Angular Components
+   ======================================== */
+
+/* Header Navigation */
+.header {
+  background: linear-gradient(140deg, #1a1a22 0%, #22222e 100%) !important;
+  border-bottom: 2px solid rgba(58, 195, 235, 0.3) !important;
+  box-shadow: 
+    0 4px 20px rgba(5, 5, 10, 0.6),
+    0 0 30px rgba(58, 195, 235, 0.15) !important;
+}
+
+.header-icon-button {
+  background: rgba(58, 195, 235, 0.1) !important;
+  border: 1px solid rgba(58, 195, 235, 0.25) !important;
+  border-radius: 8px !important;
+  color: #5bc5eb !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.header-icon-button:hover {
+  background: rgba(58, 195, 235, 0.2) !important;
+  border-color: rgba(58, 195, 235, 0.5) !important;
+  box-shadow: 0 0 20px rgba(58, 195, 235, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+.header__link {
+  color: #e8e8ea !important;
+  transition: all 0.25s ease !important;
+}
+
+.header__link:hover {
+  color: #5bc5eb !important;
+  text-shadow: 0 0 8px rgba(91, 197, 235, 0.4) !important;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  background: linear-gradient(160deg, #16161e 0%, #1a1a22 100%) !important;
+  border-right: 2px solid rgba(58, 195, 235, 0.2) !important;
+  box-shadow: 
+    4px 0 20px rgba(5, 5, 10, 0.5),
+    0 0 40px rgba(58, 195, 235, 0.1) !important;
+}
+
+.sidebar__header {
+  background: linear-gradient(140deg, #1c1c24 0%, #22222e 100%) !important;
+  border-bottom: 1.5px solid rgba(58, 195, 235, 0.3) !important;
+  padding: 16px !important;
+}
+
+/* Workspace Areas */
+.workspace-wrapper,
+.inner-workspace-wrapper {
+  background-color: #0d0d0f !important;
+}
+
+.iframeWorkspace {
+  background-color: #0d0d0f !important;
+  border-radius: 12px !important;
+}
+
+.iframe-wrapper {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+/* Dropdowns */
+.dropdown {
+  background: linear-gradient(145deg, #1a1a22, #1e1e26) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 
+    0 8px 32px rgba(5, 5, 10, 0.7),
+    0 0 50px rgba(58, 195, 235, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.app-switcher-dropdown,
+.notifications-dropdown,
+.product-switcher-dropdown {
+  background: linear-gradient(145deg, #1a1a22, #1e1e26) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 
+    0 8px 32px rgba(5, 5, 10, 0.7),
+    0 0 50px rgba(58, 195, 235, 0.2) !important;
+}
+
+.app-switcher-header,
+.notifications-dropdown__header {
+  background: linear-gradient(140deg, #1c1c24 0%, #232330 100%) !important;
+  color: #5bc5eb !important;
+  border-bottom: 2px solid rgba(58, 195, 235, 0.4) !important;
+  padding: 14px 16px !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 10px rgba(91, 197, 235, 0.4) !important;
+}
+
+.notifications-dropdown__body,
+.product-switcher-dropdown__body {
+  background-color: #181820 !important;
+}
+
+/* Notifications */
+.notification {
+  background: linear-gradient(145deg, #1a1a22, #1e1e26) !important;
+  border: 1px solid rgba(58, 195, 235, 0.2) !important;
+  border-radius: 10px !important;
+  margin: 8px !important;
+  padding: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.notification:hover {
+  background: linear-gradient(145deg, #1e1e26, #22222e) !important;
+  border-color: rgba(58, 195, 235, 0.5) !important;
+  box-shadow: 
+    0 4px 16px rgba(5, 5, 10, 0.6),
+    0 0 25px rgba(58, 195, 235, 0.25) !important;
+  transform: translateX(4px) !important;
+}
+
+.notification__text {
+  color: #e8e8ea !important;
+}
+
+.notification__date {
+  color: #85d88f !important;
+  font-size: 0.85em !important;
+}
+
+.notification__circle {
+  color: #5bc5eb !important;
+}
+
+/* App Switcher Buttons */
+.app-button {
+  background: linear-gradient(145deg, #1a1a22, #1e1e26) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.25) !important;
+  border-radius: 10px !important;
+  color: #e8e8ea !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin: 6px !important;
+  padding: 14px !important;
+}
+
+.app-button:hover {
+  background: linear-gradient(145deg, #1e1e26, #22222e) !important;
+  border-color: rgba(58, 195, 235, 0.5) !important;
+  box-shadow: 
+    0 4px 18px rgba(5, 5, 10, 0.6),
+    0 0 30px rgba(58, 195, 235, 0.3) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.app-button--active {
+  background: linear-gradient(145deg, rgba(58, 195, 235, 0.15), rgba(130, 205, 130, 0.12)) !important;
+  border-color: rgba(58, 195, 235, 0.6) !important;
+  box-shadow: 
+    0 0 20px rgba(58, 195, 235, 0.3),
+    inset 0 0 15px rgba(58, 195, 235, 0.1) !important;
+}
+
+.app-button__icon {
+  color: #5bc5eb !important;
+  text-shadow: 0 0 8px rgba(91, 197, 235, 0.4) !important;
+}
+
+.app-button__label {
+  color: #e8e8ea !important;
+}
+
+/* View Toggle Buttons */
+.apps-view-button {
+  background: rgba(58, 195, 235, 0.1) !important;
+  border: 1px solid rgba(58, 195, 235, 0.25) !important;
+  border-radius: 8px !important;
+  color: #e8e8ea !important;
+  transition: all 0.25s ease !important;
+  padding: 8px 12px !important;
+  margin: 0 4px !important;
+}
+
+.apps-view-button:hover {
+  background: rgba(58, 195, 235, 0.2) !important;
+  border-color: rgba(58, 195, 235, 0.45) !important;
+}
+
+.apps-view-button--active {
+  background: rgba(58, 195, 235, 0.25) !important;
+  border-color: rgba(58, 195, 235, 0.6) !important;
+  box-shadow: 
+    0 0 15px rgba(58, 195, 235, 0.3),
+    inset 0 0 10px rgba(58, 195, 235, 0.15) !important;
+}
+
+/* Modal Overlays */
+.modal-overlay {
+  background-color: rgba(13, 13, 15, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.overlay {
+  background-color: rgba(13, 13, 15, 0.75) !important;
+}
+
+.overlay--darken {
+  background-color: rgba(5, 5, 10, 0.85) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* Generic Angular Component Containers */
+.ng-star-inserted {
+  /* Ensure dark backgrounds for dynamically inserted content */
+}
+
+/* Card-like containers in modern IC */
+.card,
+.panel,
+.content-panel {
+  background: linear-gradient(145deg, #181820, #1c1c24) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.25) !important;
+  border-radius: 12px !important;
+  box-shadow: 
+    0 4px 20px rgba(5, 5, 10, 0.6),
+    0 0 35px rgba(58, 195, 235, 0.12) !important;
+  color: #e8e8ea !important;
+}
+
+/* Lists and menus */
+.list-none li,
+.menu-item {
+  background: rgba(24, 24, 32, 0.5) !important;
+  border-bottom: 1px solid rgba(58, 195, 235, 0.1) !important;
+  transition: all 0.25s ease !important;
+}
+
+.list-none li:hover,
+.menu-item:hover {
+  background: rgba(58, 195, 235, 0.15) !important;
+  border-left: 3px solid rgba(58, 195, 235, 0.6) !important;
+  padding-left: 12px !important;
+}
+
+/* Form elements in modern IC */
+input[type="text"].ng-star-inserted,
+input[type="password"].ng-star-inserted,
+select.ng-star-inserted,
+textarea.ng-star-inserted {
+  background-color: #16161e !important;
+  background-image: linear-gradient(165deg, rgba(22,22,30,0.9), rgba(18,18,26,1)) !important;
+  border: 1.8px solid rgba(58, 195, 235, 0.28) !important;
+  color: #f7f7f7 !important;
+}
+
+/* Buttons in modern IC */
+.button,
+button.ng-star-inserted {
+  background: linear-gradient(138deg, rgba(58, 195, 235, 0.18), rgba(130, 205, 130, 0.15)) !important;
+  border: 2px solid rgba(58, 195, 235, 0.38) !important;
+  border-radius: 10px !important;
+  color: #f7f7f7 !important;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.button:hover,
+button.ng-star-inserted:hover {
+  background: linear-gradient(138deg, rgba(58, 195, 235, 0.32), rgba(130, 205, 130, 0.28)) !important;
+  border-color: rgba(58, 195, 235, 0.72) !important;
+  box-shadow: 
+    0 5px 18px rgba(5, 5, 10, 0.6),
+    0 0 28px rgba(58, 195, 235, 0.42) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.button--small {
+  padding: 8px 14px !important;
+  font-size: 0.9em !important;
+}
+
+/* Status indicators and badges */
+.badge,
+.status-indicator {
+  background: rgba(58, 195, 235, 0.2) !important;
+  border: 1px solid rgba(58, 195, 235, 0.4) !important;
+  border-radius: 12px !important;
+  color: #5bc5eb !important;
+  padding: 4px 10px !important;
+  text-shadow: 0 0 6px rgba(91, 197, 235, 0.3) !important;
+}
+
+/* ========================================
+   Card Movement & Drag System
+   ======================================== */
+
+/* Draggable card states */
+[data-moveable="true"] {
+  transition: transform 0.2s ease, opacity 0.2s ease !important;
+}
+
+[data-moveable="true"]:hover .card-move-grip {
+  opacity: 0.9 !important;
+}
+
+/* Grip handle styles enhanced */
+.card-move-grip {
+  user-select: none;
+  -webkit-user-select: none;
+  text-shadow: 0 0 8px rgba(58, 195, 235, 0.6) !important;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+.card-move-grip:hover {
+  background: rgba(58, 195, 235, 0.35) !important;
+  box-shadow: 0 0 15px rgba(58, 195, 235, 0.4) !important;
+  transform: scale(1.1);
+}
+
+.card-move-grip:active {
+  background: rgba(58, 195, 235, 0.5) !important;
+  transform: scale(0.95);
+}
+
+/* Swap animation */
+@keyframes cardSwapIn {
+  0% {
+    transform: scale(0.9) rotate(-1deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Pulse effect for drop targets */
+@keyframes dropTargetPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(58, 195, 235, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(58, 195, 235, 0);
+  }
+}
+
+/* Drop zone indicator */
+[data-moveable="true"][style*="outline"] {
+  animation: dropTargetPulse 1s infinite;
+}
+
+/* Ghost element enhancements */
+.dragging-ghost {
+  cursor: grabbing !important;
+  filter: brightness(1.1);
+}
+
+/* Container highlights during drag */
+.drop-container-active {
+  background: rgba(58, 195, 235, 0.05) !important;
+  border: 2px dashed rgba(58, 195, 235, 0.3) !important;
 }
