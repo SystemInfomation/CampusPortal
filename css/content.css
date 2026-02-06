@@ -494,3 +494,297 @@ button:hover, .btn:hover, input[type="submit"]:hover {
         opacity: .5;
     }
 }
+
+/* ========================================
+   Modern Infinite Campus Angular Components
+   ======================================== */
+
+/* Header Navigation */
+.header {
+  background: linear-gradient(140deg, #1a1a22 0%, #22222e 100%) !important;
+  border-bottom: 2px solid rgba(58, 195, 235, 0.3) !important;
+  box-shadow: 
+    0 4px 20px rgba(5, 5, 10, 0.6),
+    0 0 30px rgba(58, 195, 235, 0.15) !important;
+}
+
+.header-icon-button {
+  background: rgba(58, 195, 235, 0.1) !important;
+  border: 1px solid rgba(58, 195, 235, 0.25) !important;
+  border-radius: 8px !important;
+  color: #5bc5eb !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.header-icon-button:hover {
+  background: rgba(58, 195, 235, 0.2) !important;
+  border-color: rgba(58, 195, 235, 0.5) !important;
+  box-shadow: 0 0 20px rgba(58, 195, 235, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+.header__link {
+  color: #e8e8ea !important;
+  transition: all 0.25s ease !important;
+}
+
+.header__link:hover {
+  color: #5bc5eb !important;
+  text-shadow: 0 0 8px rgba(91, 197, 235, 0.4) !important;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  background: linear-gradient(160deg, #16161e 0%, #1a1a22 100%) !important;
+  border-right: 2px solid rgba(58, 195, 235, 0.2) !important;
+  box-shadow: 
+    4px 0 20px rgba(5, 5, 10, 0.5),
+    0 0 40px rgba(58, 195, 235, 0.1) !important;
+}
+
+.sidebar__header {
+  background: linear-gradient(140deg, #1c1c24 0%, #22222e 100%) !important;
+  border-bottom: 1.5px solid rgba(58, 195, 235, 0.3) !important;
+  padding: 16px !important;
+}
+
+/* Workspace Areas */
+.workspace-wrapper,
+.inner-workspace-wrapper {
+  background-color: #0d0d0f !important;
+}
+
+.iframeWorkspace {
+  background-color: #0d0d0f !important;
+  border-radius: 12px !important;
+}
+
+.iframe-wrapper {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+/* Dropdowns */
+.dropdown {
+  background: linear-gradient(145deg, #1a1a22, #1e1e26) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 
+    0 8px 32px rgba(5, 5, 10, 0.7),
+    0 0 50px rgba(58, 195, 235, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.app-switcher-dropdown,
+.notifications-dropdown,
+.product-switcher-dropdown {
+  background: linear-gradient(145deg, #1a1a22, #1e1e26) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 
+    0 8px 32px rgba(5, 5, 10, 0.7),
+    0 0 50px rgba(58, 195, 235, 0.2) !important;
+}
+
+.app-switcher-header,
+.notifications-dropdown__header {
+  background: linear-gradient(140deg, #1c1c24 0%, #232330 100%) !important;
+  color: #5bc5eb !important;
+  border-bottom: 2px solid rgba(58, 195, 235, 0.4) !important;
+  padding: 14px 16px !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 10px rgba(91, 197, 235, 0.4) !important;
+}
+
+.notifications-dropdown__body,
+.product-switcher-dropdown__body {
+  background-color: #181820 !important;
+}
+
+/* Notifications */
+.notification {
+  background: linear-gradient(145deg, #1a1a22, #1e1e26) !important;
+  border: 1px solid rgba(58, 195, 235, 0.2) !important;
+  border-radius: 10px !important;
+  margin: 8px !important;
+  padding: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.notification:hover {
+  background: linear-gradient(145deg, #1e1e26, #22222e) !important;
+  border-color: rgba(58, 195, 235, 0.5) !important;
+  box-shadow: 
+    0 4px 16px rgba(5, 5, 10, 0.6),
+    0 0 25px rgba(58, 195, 235, 0.25) !important;
+  transform: translateX(4px) !important;
+}
+
+.notification__text {
+  color: #e8e8ea !important;
+}
+
+.notification__date {
+  color: #85d88f !important;
+  font-size: 0.85em !important;
+}
+
+.notification__circle {
+  color: #5bc5eb !important;
+}
+
+/* App Switcher Buttons */
+.app-button {
+  background: linear-gradient(145deg, #1a1a22, #1e1e26) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.25) !important;
+  border-radius: 10px !important;
+  color: #e8e8ea !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin: 6px !important;
+  padding: 14px !important;
+}
+
+.app-button:hover {
+  background: linear-gradient(145deg, #1e1e26, #22222e) !important;
+  border-color: rgba(58, 195, 235, 0.5) !important;
+  box-shadow: 
+    0 4px 18px rgba(5, 5, 10, 0.6),
+    0 0 30px rgba(58, 195, 235, 0.3) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.app-button--active {
+  background: linear-gradient(145deg, rgba(58, 195, 235, 0.15), rgba(130, 205, 130, 0.12)) !important;
+  border-color: rgba(58, 195, 235, 0.6) !important;
+  box-shadow: 
+    0 0 20px rgba(58, 195, 235, 0.3),
+    inset 0 0 15px rgba(58, 195, 235, 0.1) !important;
+}
+
+.app-button__icon {
+  color: #5bc5eb !important;
+  text-shadow: 0 0 8px rgba(91, 197, 235, 0.4) !important;
+}
+
+.app-button__label {
+  color: #e8e8ea !important;
+}
+
+/* View Toggle Buttons */
+.apps-view-button {
+  background: rgba(58, 195, 235, 0.1) !important;
+  border: 1px solid rgba(58, 195, 235, 0.25) !important;
+  border-radius: 8px !important;
+  color: #e8e8ea !important;
+  transition: all 0.25s ease !important;
+  padding: 8px 12px !important;
+  margin: 0 4px !important;
+}
+
+.apps-view-button:hover {
+  background: rgba(58, 195, 235, 0.2) !important;
+  border-color: rgba(58, 195, 235, 0.45) !important;
+}
+
+.apps-view-button--active {
+  background: rgba(58, 195, 235, 0.25) !important;
+  border-color: rgba(58, 195, 235, 0.6) !important;
+  box-shadow: 
+    0 0 15px rgba(58, 195, 235, 0.3),
+    inset 0 0 10px rgba(58, 195, 235, 0.15) !important;
+}
+
+/* Modal Overlays */
+.modal-overlay {
+  background-color: rgba(13, 13, 15, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.overlay {
+  background-color: rgba(13, 13, 15, 0.75) !important;
+}
+
+.overlay--darken {
+  background-color: rgba(5, 5, 10, 0.85) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* Generic Angular Component Containers */
+.ng-star-inserted {
+  /* Ensure dark backgrounds for dynamically inserted content */
+}
+
+/* Card-like containers in modern IC */
+.card,
+.panel,
+.content-panel {
+  background: linear-gradient(145deg, #181820, #1c1c24) !important;
+  border: 1.5px solid rgba(58, 195, 235, 0.25) !important;
+  border-radius: 12px !important;
+  box-shadow: 
+    0 4px 20px rgba(5, 5, 10, 0.6),
+    0 0 35px rgba(58, 195, 235, 0.12) !important;
+  color: #e8e8ea !important;
+}
+
+/* Lists and menus */
+.list-none li,
+.menu-item {
+  background: rgba(24, 24, 32, 0.5) !important;
+  border-bottom: 1px solid rgba(58, 195, 235, 0.1) !important;
+  transition: all 0.25s ease !important;
+}
+
+.list-none li:hover,
+.menu-item:hover {
+  background: rgba(58, 195, 235, 0.15) !important;
+  border-left: 3px solid rgba(58, 195, 235, 0.6) !important;
+  padding-left: 12px !important;
+}
+
+/* Form elements in modern IC */
+input[type="text"].ng-star-inserted,
+input[type="password"].ng-star-inserted,
+select.ng-star-inserted,
+textarea.ng-star-inserted {
+  background-color: #16161e !important;
+  background-image: linear-gradient(165deg, rgba(22,22,30,0.9), rgba(18,18,26,1)) !important;
+  border: 1.8px solid rgba(58, 195, 235, 0.28) !important;
+  color: #f7f7f7 !important;
+}
+
+/* Buttons in modern IC */
+.button,
+button.ng-star-inserted {
+  background: linear-gradient(138deg, rgba(58, 195, 235, 0.18), rgba(130, 205, 130, 0.15)) !important;
+  border: 2px solid rgba(58, 195, 235, 0.38) !important;
+  border-radius: 10px !important;
+  color: #f7f7f7 !important;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.button:hover,
+button.ng-star-inserted:hover {
+  background: linear-gradient(138deg, rgba(58, 195, 235, 0.32), rgba(130, 205, 130, 0.28)) !important;
+  border-color: rgba(58, 195, 235, 0.72) !important;
+  box-shadow: 
+    0 5px 18px rgba(5, 5, 10, 0.6),
+    0 0 28px rgba(58, 195, 235, 0.42) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.button--small {
+  padding: 8px 14px !important;
+  font-size: 0.9em !important;
+}
+
+/* Status indicators and badges */
+.badge,
+.status-indicator {
+  background: rgba(58, 195, 235, 0.2) !important;
+  border: 1px solid rgba(58, 195, 235, 0.4) !important;
+  border-radius: 12px !important;
+  color: #5bc5eb !important;
+  padding: 4px 10px !important;
+  text-shadow: 0 0 6px rgba(91, 197, 235, 0.3) !important;
+}
